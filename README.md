@@ -1,7 +1,7 @@
-# dind-node-build-runner
+# dind-node-rethinkdb-build-runner
 
 A docker image that provides a running environment to perform builds using common node
-js tools and docker in docker.
+js tools, RethinkDB, and docker in docker.
 
 Tools:
 
@@ -16,9 +16,10 @@ Tools:
 - phantomjs
 - chrome
 - chromedriver
+- rethinkdb
 
 ## Usage
 
 ```
-docker run --privileged mcasimir/dind-node-build-runner
+docker run --privileged portchaw/dind-node-rethink-build-runner
 ```
