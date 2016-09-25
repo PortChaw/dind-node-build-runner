@@ -27,6 +27,8 @@ RUN \
   && curl -sL https://deb.nodesource.com/setup_$NODE_JS_VERSION.x | sudo -E bash - \
   && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
   && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list \
+  && echo "deb http://download.rethinkdb.com/apt `lsb_release -cs` main" > /etc/apt/sources.list.d/rethinkdb.list \
+  && wget -O- http://download.rethinkdb.com/apt/pubkey.gpg | apt-key add - \
   && apt-get update -qqy \
   && echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections \
   && apt-get install -y \
@@ -44,6 +46,7 @@ RUN \
     unzip \
     xvfb \
     google-chrome-stable \
+    rethinkdb \
   && mv /tmp/chrome_launcher.sh /opt/google/chrome/google-chrome \
   && chmod +x /opt/google/chrome/google-chrome \
   && tar xvjf phantomjs-$PHANTOM_JS_VERSION-linux-x86_64.tar.bz2 \
