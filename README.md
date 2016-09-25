@@ -21,5 +21,5 @@ Tools:
 ## Usage
 
 ```
-docker run --privileged portchaw/dind-node-rethink-build-runner
+docker run --privileged portchaw/dind-node-rethinkdb-build-runner
 ```
