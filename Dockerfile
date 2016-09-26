@@ -73,4 +73,16 @@ RUN \
 
 WORKDIR /usr/src/app
 
+# RethinkDB
+CMD ["rethinkdb", "--bind", "all"]
+
 CMD ["gulp"]
+
+
+# Expose ports.
+#   - 8080: web UI
+#   - 28015: process
+#   - 29015: cluster
+EXPOSE 8080
+EXPOSE 28015
+EXPOSE 29015
